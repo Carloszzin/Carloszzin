@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7d58c67989.js" crossorigin="anonymous"></script>
     <title>Meu teste</title>
     <style>
         *{
@@ -17,16 +18,50 @@
             display: flex;
             align-items: center;
         }
+        .botao{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 15px;
+            
+            
+        }
         button{
             cursor:pointer;
-            padding: 15px;
+            padding: 10px;
+            margin-right: 8px;
             border-radius: 8px;
             background-color: yellow;
             font: 15pt verdana;
         }
+      
         img{
             height: 150px;
         }
+
+        .social-login {	
+            position: absolute;
+            height: 140px;
+            width: 160px;
+            text-align: center;
+            bottom: 0px;
+            right: 0px;
+            color: #000000;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-login__icon {
+            padding: 20px 10px;
+            color: #000000;
+            text-decoration: none;	
+            text-shadow: 0px 0px 8px #7875B5;
+        }
+
     </style>
 </head>
 <body>
@@ -34,16 +69,26 @@
         <img src="https://i.pinimg.com/736x/ab/fb/03/abfb033a60ba73f5dfd5e553ed1179e2.jpg" alt="minha logo beta...">
         <h1 id="get">Vou com tudo que tenho para cima desse problema</h1>
     </div>
-    
-    <button onclick="c1()">Click me!</button>
-    <button onclick="c2()">Click me2!</button>
-    <button onclick="c3()">Click me3!</button>
-    <button onclick="c4()">Click me4!</button>
+
+    <div class="social-icons">
+        <a href="#" class="social-login__icon fab fa-instagram"></a>
+        <a href="#" class="social-login__icon fab fa-facebook"></a>
+        <a href="#" class="social-login__icon fab fa-twitter"></a>
+    </div>
+
+    <div class="botao">
+        <button onclick="c1()">Click me!</button>
+        <button onclick="c2()">Click me2!</button>
+        <button onclick="c3()">Click me3!</button>
+        <button onclick="c4()">Click me4!</button>
+    </div>
+
     <section id="saida">
         <h2>Aperte e veja aqui: </h2>
          
     </section>
 
+    
     <script src="acoes.js"></script>
     
 </body>

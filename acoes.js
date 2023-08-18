@@ -1,6 +1,7 @@
 // Escopo global
 let s = document.querySelector('section#saida');
 
+
 function c1() {
     s.innerHTML += '<p>Você clicou no <strong>primeiro</strong> botão!</p>'
 }
