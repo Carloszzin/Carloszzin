@@ -62,25 +62,31 @@
             text-shadow: 0px 0px 8px #7875B5;
         }
         
+        .containeer{
+            display: flex;
+            width: 100%;
+            min-height: 30vh;
+            align-items: center;
+            justify-content: center;
+            transition: 1s;
+        }
+
        .container-img{
         position: relative;
-        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        width: 100px;
        }
 
-       .container-img img{
-        position: absolute;
-        left: 0;
-        top: 30px;
-        width: 200px;
-        opacity: 0;
-       }
 
        .bullets{
         text-align: center;
        }
 
        .bullet-single{
-        margin: 0 4px;
+        margin: 20px 4px;
         cursor: pointer;
         display: inline-block;
         width: 10px;
@@ -122,10 +128,12 @@
          
     </section>
      
+    <div class="containeer">
     <div class="container-img">
         <img style="opacity: 1;" src="https://picsum.photos/id/1/200/300" alt="imagem 1">
         <img src="https://picsum.photos/id/2/200/300" alt="imagem 2">
         <img src="https://picsum.photos/id/3/200/300" alt="imagem 3">
+    </div>
     </div>
 
     <div class="bullets">
@@ -137,7 +145,31 @@
    
     
     <script src="acoes.js"></script>
-    <script></script>
+    <script>
+        var lastIndex = 0;
+
+        var images = document.querySelectorAll('.container-img img');
+
+        images.forEach((item,index)=>{
+            document.querySelectorAll('.bullet-single')[index]
+            .addEventListener('click', ()=>{
+                let lastImage = document.querySelectorAll('.container-img img')[lastIndex];
+                let actualImage= document.querySelectorAll('.container-img img')[index];
+                
+
+                document.querySelectorAll('.bullet-single')[lastIndex]
+                .classList.remove('active-bullet');
+                
+                document.querySelectorAll('.bullet-single')[index]
+                .classList.add('active-bullet');
+
+                lastImage.style.opacity = 0;
+                actualImage.style.opacity = 1;
+
+                lastImage=index;
+            })
+        })
+    </script>
     
 </body>
 </html>
